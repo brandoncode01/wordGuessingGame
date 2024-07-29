@@ -1,11 +1,22 @@
+import  getRandomWord from './word-pool';
+import {boxChange, boxBack} from './event-listeners';
 
 const game = document.querySelector('.word');
 const box = document.createElement('input');
 box.classList.add('box');
-box.setAttribute('maxLength', 1)
+box.setAttribute('maxLength', 1);
 
-//Todo: Create an array of boxes to save their state and validate
 
-for(let i = 0; i < 8; i++){
-    game.appendChild(box.cloneNode());
+let word = getRandomWord();
+
+// Generate boxes for each character in word
+for (let i = 0; i < word.length; i++){
+    game.appendChild(box.cloneNode(true));
 }
+
+let boxes = game.childNodes;
+
+
+// even listeners from module
+boxChange(boxes);
+boxBack(boxes)
