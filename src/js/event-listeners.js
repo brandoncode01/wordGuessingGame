@@ -28,3 +28,28 @@ export function boxBack(boxes){
 
 }
 
+
+export function leftRightArrows(boxes){
+    boxes.forEach(element => {
+        element.addEventListener('keydown', (event) => {
+            let previousElement = event.currentTarget.previousElementSibling;
+            let nextElement = event.currentTarget.nextElementSibling;
+                if (previousElement && event.key === 'ArrowLeft'){
+                    previousElement.focus();
+                    event.preventDefault();
+                }
+                
+                if (nextElement && event.key === 'ArrowRight'){
+                    nextElement.focus();
+                    event.preventDefault();
+                }
+        });
+    });
+}
+
+
+// Todo: Implement validation on submit
+export function buttonCheckAns(button, boxes, ans){
+
+}
+

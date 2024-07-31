@@ -1,5 +1,5 @@
 import  getRandomWord from './word-pool';
-import {boxChange, boxBack} from './event-listeners';
+import {boxChange, boxBack, leftRightArrows} from './event-listeners';
 
 const game = document.querySelector('.word');
 const box = document.createElement('input');
@@ -17,6 +17,7 @@ for (let i = 0; i < word.length; i++){
 let boxes = game.childNodes;
 
 
-// even listeners from module
+// event listeners from module
 boxChange(boxes);
-boxBack(boxes)
+boxBack(boxes);
+leftRightArrows(boxes);
