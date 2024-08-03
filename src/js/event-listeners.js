@@ -48,8 +48,23 @@ export function leftRightArrows(boxes){
 }
 
 
-// Todo: Implement validation on submit
 export function buttonCheckAns(button, boxes, ans){
-
+    button.addEventListener('submit', (event) =>{
+        let text = "";
+        for (let i = 0; i < boxes.length; i++) text += boxes[i].value;
+        
+    
+    
+        for(let i = 0; i < boxes.length; i++){
+            if (boxes[i].value !== ans[i]){
+                boxes[i].classList.add('wrong');
+            }else{
+                boxes[i].classList.add('right');
+            }
+        }
+  
+        event.preventDefault();
+        
+    }), true
 }
 

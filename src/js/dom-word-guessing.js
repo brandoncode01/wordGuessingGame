@@ -1,5 +1,5 @@
 import  getRandomWord from './word-pool';
-import {boxChange, boxBack, leftRightArrows} from './event-listeners';
+import {boxChange, boxBack, leftRightArrows, buttonCheckAns} from './event-listeners';
 
 const game = document.querySelector('.word');
 const box = document.createElement('input');
@@ -15,9 +15,12 @@ for (let i = 0; i < word.length; i++){
 }
 
 let boxes = game.childNodes;
-
-
+let button = document.querySelector('#submit-ans');
+console.log(button);
 // event listeners from module
 boxChange(boxes);
 boxBack(boxes);
 leftRightArrows(boxes);
+buttonCheckAns(button, boxes, word);
+
+// Todo get value if true generate a new word otherwise keep the same
