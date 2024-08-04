@@ -83,3 +83,9 @@ form{
     cursor: pointer;
     border-radius: 10px;
 }
+
+.congrats {
+    background-image: url("../images/congrats5.gif");
+    background-repeat: no-repeat;
+    background-position: center;
+}

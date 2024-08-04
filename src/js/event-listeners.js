@@ -53,7 +53,8 @@ export function buttonCheckAns(button, boxes, ans){
         let text = "";
         for (let i = 0; i < boxes.length; i++) text += boxes[i].value;
         
-    
+        let game = document.querySelector('.game');
+      
     
         for(let i = 0; i < boxes.length; i++){
             if (boxes[i].value !== ans[i]){
@@ -62,9 +63,16 @@ export function buttonCheckAns(button, boxes, ans){
                 boxes[i].classList.add('right');
             }
         }
-  
-        event.preventDefault();
         
+        event.preventDefault();
+        if (text === ans ){
+            game.classList.add('congrats');
+            setTimeout(() => {  
+                game.classList.remove('congrats'); 
+                button.submit();
+            }, 2000);
+        }
+
     }), true
 }
 
